@@ -13,7 +13,7 @@
           :key="index"
           class="col-md-4 mb-4 d-flex align-items-stretch"
         >
-          <div class="card text-center h-100 shadow-sm card-hover">
+          <div class="card service-card text-center h-100 shadow-sm card-hover">
             <div class="card-body d-flex flex-column">
               <div class="mb-3">
                 <i :class="`${card.icon} card-icon`"></i>
@@ -70,6 +70,12 @@
   </script>
   
   <style scoped>
+  .service-card{
+    border: 1.5px solid #ddd; /* Light gray border with thicker width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: transform 0.3s, border-color 0.3s;
+    
+  }
   .heading-container{
     text-align: center;
     margin-bottom: 3rem;

@@ -1,66 +1,53 @@
 <template>
-    
-
     <div class="container my-4">
         <div class="heading-container">
-        <h1 >Our Services</h1>
-        <p>Prime Marketing Experts is a digital marketing and website services company focused on helping small and medium-sized businesses in the Boston area prosper. Since 2017, we’ve served hundreds of companies and thousands of clients, offering a wide range of marketing, branding, and advertising solutions.</p>
+        <h1 >Who We Serve</h1>
+        <p>In today`s competitive business landscape, a one-size-fits-all approach to marketing is no longer sufficient. Successful marketing strategies must be tailored to the specific needs, challenges, and goals of each industry. That is why we empower diverse industries with customized, results-driven marketing solutions tailored to their unique needs and goals.</p>
 
     </div>
       <div class="row">
-        <div
-          v-for="(card, index) in displayedCards"
-          :key="index"
-          class="col-md-4 mb-4 d-flex align-items-stretch"
-        >
-          <div class="card text-center h-100 shadow-sm card-hover">
-            <div class="card-body d-flex flex-column">
-              <div class="mb-3">
-                <i :class="`${card.icon} card-icon`"></i>
-              </div>
-              <h5 class="card-title">{{ card.title }}</h5>
-              <p class="card-text flex-grow-1">{{ card.text }}</p>
-              <a :href="card.buttonLink" class="btn card-btn mt-auto">
-  <span>{{ card.buttonText }}</span>
-</a>
-            </div>
-          </div>
+        <div class="card col-md-12 big-card w-100 mb-3 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">Marketing for Small to Medium Business Owners</h5>
+    <p class="card-text">PM is dedicated to helping SMBs achieve their marketing goals with top-notch, industry-specific strategies. We focus on providing exceptional service that fits within their budget.</p>
+  </div>
+</div>
+<div
+        v-for="(card, index) in cards"
+        :key="index"
+        class="col-md-4 mb-4"
+      >
+        <div class="d-flex align-items-center p-3 shadow-sm card-box"   @click="goToPage(card.route)" style="cursor: pointer;">
+          <i :class="`${card.icon} card-icon me-3`"></i>
+          <h5 class="mb-0 fw-bold">{{ card.title }}</h5>
         </div>
       </div>
     </div>
+  </div>
   </template>
-  
   <script>
   export default {
-    name:'WhoWeServeComp',
+    name: 'WhoWeServeComp',
     data() {
       return {
-        showMore: false,
         cards: [
-          { icon: 'bi bi-emoji-smile', title: 'Website Development', text: 'Our full-service website development services fit the unique needs of each business and is planned to maximize your results of other marketing initiatives.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-gear', title: 'Marketing Automation', text: 'We increase your sales productivity by using an integrated technology platform with synergistic marketing initiatives to spark your sales growth.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-lightning', title: 'Google Shopping Campaign Services', text: 'We deploy ROI-maximizing processes to strategically implement and manage your Search Engine Advertising Campaigns.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-heart', title: 'SEO Services', text: 'We deploy an integrated, comprehensive strategy to help you raise your search engine rankings for your targeted keywords.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-star', title: 'Social Media Marketing', text: 'We provide social media posting and sponsored ad management services. Our AI-assisted system ensures that we post the right content at the right time!', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-music-note', title: 'Text Message Marketing', text: 'Our full-service text message marketing solution efficiently reaches your customers, as an average of 98% of them are read.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-phone', title: 'Email Marketing', text: 'Engage your customers with customized email campaigns designed to boost engagement and conversions.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-globe', title: 'Content Marketing', text: 'We craft high-quality content to attract and retain a clearly defined audience, driving profitable customer actions.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-bar-chart', title: 'Analytics & Reporting', text: 'Detailed analytics and reports to measure and optimize the performance of your marketing strategies.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-shop', title: 'E-commerce Solutions', text: 'Custom e-commerce solutions to help you sell your products online efficiently and effectively.', buttonText: 'Read More', buttonLink: '#' },
-          { icon: 'bi bi-search', title: 'PPC Advertising', text: 'Expert PPC campaign management to drive targeted traffic and maximize your ROI.', buttonText: 'Read More', buttonLink: '#' }
-        ]
+  { icon: 'bi bi-star-fill', title: 'Tourism', route: '/contact' },
+  { icon: 'bi bi-gear-fill', title: 'Automotive', route: '/' },
+  { icon: 'bi bi-heart-fill', title: 'Restaurants', route: '/' },
+  { icon: 'bi bi-lightning-fill', title: 'Retail', route: '/' },
+  { icon: 'bi bi-globe', title: 'Cleaning Companies', route: '/' },
+  { icon: 'bi bi-bar-chart-fill', title: 'Gyms', route: '/' },
+  { icon: 'bi bi-shop', title: 'Construction', route: '/' },
+  { icon: 'bi bi-phone-fill', title: 'Real Estate', route: '/' },
+  { icon: 'bi bi-search', title: 'Healthcare', route: '/' }
+]
       };
     },
-    computed: {
-      displayedCards() {
-        return this.showMore ? this.cards : this.cards.slice(0, 6);
-      }
-    },
     methods: {
-      toggleShowMore() {
-        this.showMore = !this.showMore;
-      }
-    }
+  goToPage(route) {
+    this.$router.push(route);
+  }
+}
   };
   </script>
   
@@ -72,64 +59,51 @@
   .heading-container h1{
     margin-bottom: 1.5rem;
   }
-  .card-icon {
-    font-size: 2rem;
-    color: #ea580c;
-    font-weight: bold;
+  .big-card{  
+    padding: 1.5rem;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    border: 1.5px solid #ddd; /* Light gray border with thicker width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.3s, border-color 0.3s;
+    background-color: #fff;
+  }
+  .big-card h5{
+    color:#ea580c;
+    letter-spacing: -.025em;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    padding-left: 1rem;
+   
+    
+
+
+  }
+  .big-card p{
+    font-size: 16px;
+    padding-top: 0;
+    padding: 1rem;
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+    padding-right: 0%;
   }
   
-  .card-hover:hover {
-    transform: scale(1.06);
-    transition: transform 0.6s;
-  }
-  .card-btn {
-  width: 10vw;
-  margin: 0 auto;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px;
+  .card-icon {
+  font-size: 1.8rem;
   color: #ea580c;
-  font-weight: 500;
-  background-color: white;
-  border: none;
-  overflow: hidden;
 }
-
-.card-btn span {
-  position: relative;
+.card-box {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1.5px solid #ddd; /* Light gray border with thicker width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.3s, border-color 0.3s;
 }
-
-.card-btn::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0%;
-  height: 2px;
-  background-color: #ea580c;
-  transform: translateX(-50%);
-  transition: all 0.6s ease;
+  
+.card-box:hover {
+  transform: translateY(-5px);
 }
-
-.card-btn:hover::before {
-  width: 100%;
-  left: 0;
-  transform: translateX(0);
-}
-
-.card-btn:not(:hover)::before {
-  width: 0%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-  .btn-show-more{
-    color:white ;
-    background: linear-gradient(90deg, #ffc600 10%, #ff4200);
-    border: none;
-    padding: 8px 30px;
-  }
   </style>
   

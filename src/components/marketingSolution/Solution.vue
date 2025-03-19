@@ -89,8 +89,9 @@ export default{
 
 .card {
   background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  border: 1.5px solid #ddd; /* Light gray border with thicker width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.3s, border-color 0.3s;
 
   border-radius: 12px;
   width: 35%; /* Approximately half-width to fit 2 cards per row */
