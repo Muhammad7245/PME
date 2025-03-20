@@ -1,7 +1,7 @@
 <template>
     <div class="container my-4">
       <div class="heading-container">
-        <h1>Our Case Studies</h1>
+        <h1>Trending Articles</h1>
       </div>
   
       <div class="row">
@@ -29,22 +29,25 @@
       </div>
   
       <div class="text-center mt-3">
-        <router-link to="/technology">
-          <button class="btn btn-show-more btn-secondary">
-            Show More
-          </button>
+        <router-link to="/blog">
+          <button 
+  class="btn btn-show-more btn-secondary" 
+  @click="handleShowMore"
+>
+  {{ $route.path === '/blog' ? 'Load More Articles' : 'Show More' }}
+</button>
         </router-link>
       </div>
     </div>
   </template>
   
   <script>
-import CaseBusiness from './CaseBusiness.vue';
+
 
 
   export default {
-    name: 'CaseStudy',
-    components:{CaseBusiness},
+    name: 'Articles',
+    components:{},
     data() {
       return {
         cards: [
@@ -77,6 +80,18 @@ import CaseBusiness from './CaseBusiness.vue';
         return this.cards;
       },
     },
+    methods: {
+  handleShowMore() {
+    if (this.$route.path === '/blog') {
+      // Custom functionality when on /blog
+      alert('Different functionality on Blog Page!');
+      // Example: Scroll to top or load more articles, etc.
+    } else {
+      // Default behavior: navigate to /blog
+      this.$router.push('/blog');
+    }
+  },
+}
   };
   </script>
   

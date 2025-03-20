@@ -6,6 +6,7 @@ import Marketing from '@/views/Marketing.vue'
 import Technology from '@/views/Technology.vue'
 import Blog from '@/views/Blog.vue'
 import Contact from '@/views/Contact.vue'
+import CaseBusiness from '@/components/caseStudy/CaseBusiness.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -48,6 +49,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: () => import('@/views/Contact.vue'),
+    },
+    {
+      path: '/case-business', // Use lowercase, hyphenated route path (better convention)
+      name: 'CaseBusiness',
+      component: CaseBusiness
     },
     
   ],

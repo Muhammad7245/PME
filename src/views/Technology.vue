@@ -1,3 +1,9 @@
 <template>
-    <h1>This is Technology</h1>
+<CaseStudy/>
 </template>
+<script>
+import CaseStudy from '@/components/caseStudy/CaseStudy.vue';
+
+export default{
+    components:{CaseStudy}
+}</script>

@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+
 </script>
 
 <template>
@@ -21,6 +22,9 @@ import { RouterLink, RouterView } from 'vue-router'
       </nav>
       <button>Free Strategy Session</button>
   </header>
+  <footer>
+
+  </footer>
 
   <RouterView />
 </template>

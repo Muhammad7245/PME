@@ -1,7 +1,6 @@
 <template>
   <main>
-    <Banner/>Explore Prime Marketing Experts
-    
+    <Banner/>
     <div class="spacing">
       <Solution/>
     </div>
@@ -18,6 +17,18 @@
     <div class="spacing">
       <CaseStudy/>
     </div>
+    <div class="spacing">
+      <Articles/>
+    </div>
+    <div class="spacing">
+      <FAQ/>
+    </div>
+    <div class="spacing">
+      <ContactUs/>
+    </div>
+    <div class="">
+      <Footer/>
+    </div>
 
  
   </main>
@@ -31,8 +42,12 @@ import Services from '@/components/ourServices/Services.vue';
 import WhoWeServeComp from '@/components/whoWeServe/WhoWeServeComp.vue';
 import Explore from '@/components/exploreMarketing/Explore.vue';
 import CaseStudy from '@/components/caseStudy/CaseStudy.vue';
+import Articles from '@/components/tendingArticles/Articles.vue';
+import FAQ from '@/components/faqSection/FAQ.vue';
+import ContactUs from '@/components/contactUs/ContactUs.vue';
+import Footer from '@/components/footer/Footer.vue';
 export default{
-  components: {Banner,Solution,AboutSection,Services, WhoWeServeComp, Explore, CaseStudy}
+  components: {Banner,Solution,AboutSection,Services, WhoWeServeComp, Explore, CaseStudy,Articles,FAQ,ContactUs, Footer}
 }
 </script>
 <style scoped>

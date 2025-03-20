@@ -40,6 +40,7 @@
       </button>
       <button class="btn btn-slider btn-outline-secondary" @click="slideRight">
         →
+        
       </button>
     </div>
 
