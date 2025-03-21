@@ -1,9 +1,9 @@
 <template>
-    <div class="heading-container">
-        <h1 >Solving your Digital Marketing and<br/> E-commerce Bottlenecks</h1>
+  <div class="heading-container">
+    <h1>Solving your Digital Marketing and<br /> E-commerce Bottlenecks</h1>
+  </div>
 
-    </div>
-    <div class="cards-container">
+  <div class="cards-container">
     <div
       class="card"
       v-for="(card, index) in cards"
@@ -19,12 +19,12 @@
       </ul>
     </div>
   </div>
-   
 </template>
+
 <script>
-export default{
-    name: 'Solution',
-    data() {
+export default {
+  name: 'Solution',
+  data() {
     return {
       cards: [
         {
@@ -73,39 +73,49 @@ export default{
 }
 </script>
 
-
-
 <style scoped>
 .heading-container {
   text-align: center;
+  padding: 30px 15px;
 }
+
+.heading-container h1 {
+  font-size: clamp(1.3rem, 4vw, 2.5rem); /* Adjusts across devices */
+  line-height: 1.4;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  
 }
 
 .card {
   background: white;
-  border: 1.5px solid #ddd; /* Light gray border with thicker width */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-  transition: transform 0.3s, border-color 0.3s;
-
+  border: 1.5px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
-  width: 35%; /* Approximately half-width to fit 2 cards per row */
-  padding: 20px;
-  margin: 10px;
+  width: 90%;
+  max-width: 700px;
+  padding: 25px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #00AEEF; /* Soft highlight */
 }
 
 .card h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   margin-bottom: 0.5rem;
 }
 
 .card h3 {
-    font-size: .875rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   margin-bottom: 0.5rem;
   color: #64748B;
 }
@@ -113,6 +123,7 @@ export default{
 .card p {
   margin-bottom: 1rem;
   color: #64748B;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .card ul {
@@ -124,16 +135,30 @@ export default{
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .icon {
   margin-right: 8px;
+  font-size: 1.2rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Tablet: 2 cards per row */
+@media (min-width: 768px) {
   .card {
-    width: 90%; /* Full width on smaller screens */
+    width: 45%;
+  }
+}
+
+/* Desktop: Still 2 cards per row but more space */
+@media (min-width: 1024px) {
+  .card {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
+  .card {
+    width: 40%;
   }
 }
 </style>

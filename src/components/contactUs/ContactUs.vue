@@ -2,8 +2,8 @@
     <div class="contact-container py-5">
       <!-- Heading & Paragraph -->
       <div class="text-center mb-4">
-        <h1>Contact Us</h1>
-        <p>We are here to assist you. Reach out to us anytime!</p>
+        <h1>Get in Touch</h1>
+        <p>Prime Marketing Experts is looking forward to sparking growth in your business!</p>
       </div>
   
       <!-- Main Container -->
@@ -145,10 +145,26 @@
 
   }
   
+
   @media (max-width: 768px) {
-    .contact-info {
-      text-align: center;
-    }
+  .contact-info {
+    text-align: center;
   }
-  </style>
+
+  .contact-form {
+    padding: 1.5rem;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .contact-form .btn {
+    width: 100%;
+  }
+}
+</style>
   

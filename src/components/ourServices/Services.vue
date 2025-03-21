@@ -142,5 +142,68 @@
     border: none;
     padding: 8px 30px;
   }
+
+  
+/* ----------- Media Queries ----------- */
+
+/* For tablets and smaller devices */
+@media (max-width: 992px) {
+  .heading-container h1 {
+    font-size: 2rem;
+  }
+
+  .card-icon {
+    font-size: 1.8rem;
+  }
+
+  .card-btn {
+    width: 70%; /* Wider button for smaller screens */
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  .heading-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .heading-container p {
+    font-size: 0.9rem;
+  }
+
+  .card-icon {
+    font-size: 1.6rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .card-btn {
+    width: 80%;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .btn-show-more {
+    padding: 6px 20px;
+    font-size: 0.9rem;
+  }
+}
   </style>
   

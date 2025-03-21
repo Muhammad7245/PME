@@ -34,7 +34,7 @@
   </div>
 </transition>
     <!-- Slide Left/Right Buttons -->
-    <div class="d-flex justify-content-center gap-4 mt-4">
+    <div class="d-flex justify-content-center gap-4 mt-4 slider-container">
       <button class="btn btn-slider btn-outline-secondary" @click="slideLeft">
         ←
       </button>
@@ -109,84 +109,148 @@
   </script>
   
   <style scoped>
-  .heading-container h1{
-    margin-top: 4rem;
-    text-align: center;
-  }
-  .text-section{
-   padding: 5rem;
-   position: relative;
-    top: -20px;
-   background-color:white ;
-  }
-  .text-section h2 {
-    color: black;
-    margin-bottom: 1rem;
-  }
-  .image-section {
- border-radius: 10px;
- overflow: hidden;
- 
+ .heading-container h1 {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 2.5rem;
 }
-  .image-section img
-  {
+
+.text-section {
+  padding: 5rem;
+  position: relative;
+  top: -20px;
+  background-color: white;
+}
+
+.text-section h2 {
+  color: black;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.image-section {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-section img {
   width: 100%;
   height: 450px;
+  object-fit: cover;
+}
 
-  }
-
-  .menu button {
-    margin-top: 2rem;
-  }
-  .component-container{
-    border: 1.5px solid #ddd; /* Light gray border with thicker width */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-  transition: transform 0.3s, border-color 0.3s;
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: white;
-  }
-  .explore-comp-btn{
-    color:white ;
-    background: linear-gradient(90deg, #f98b40 10%, #e1396e);
-    border: none;
-    padding: 8px 30px;
-  }
-  .menu button {
-    margin-top: 2rem;
-    border: 1.5px solid #ddd; /* Light gray border with thicker width */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+.menu button {
+  margin-top: 2rem;
+  border: 1.5px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, border-color 0.3s;
   color: black;
   font-weight: 500;
 }
-.menu button:hover {
-  background-color: #e9f6fa !important; /* Light blue */
-  color: black !important; /* Optional: Adjust text color if needed */
 
+.menu button:hover {
+  background-color: #e9f6fa !important;
+  color: black !important;
 }
 
 .btn-active {
-    background: linear-gradient(90deg, #f98b40 10%, #e1396e) !important;
+  background: linear-gradient(90deg, #f98b40 10%, #e1396e) !important;
   color: white !important;
   border: none !important;
 }
+
+.component-container {
+  border: 1.5px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, border-color 0.3s;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.explore-comp-btn {
+  color: white;
+  background: linear-gradient(90deg, #f98b40 10%, #e1396e);
+  border: none;
+  padding: 8px 30px;
+}
+
 /* Slide-fade transition */
-.slide-fade-enter-active, .slide-fade-leave-active {
+.slide-fade-enter-active,
+.slide-fade-leave-active {
   transition: all 0.3s ease;
 }
 
 .slide-fade-enter {
-  transform: translateX(100%); /* Start from right */
+  transform: translateX(100%);
   opacity: 0;
 }
 
 .slide-fade-leave-to {
-  transform: translateX(-100%); /* Exit to left */
+  transform: translateX(-100%);
   opacity: 0;
 }
+
 .btn-slider {
   min-width: 50px;
   font-weight: 500;
 }
+.slider-container{
+    display: none !important;
+  }
+
+/* ========== RESPONSIVENESS ========== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .text-section {
+    padding: 2rem;
+  }
+  .text-section h2 {
+    font-size: 1.7rem;
+  }
+  .image-section img {
+    height: 350px;
+  }
+ 
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .heading-container h1 {
+    font-size: 1.8rem;
+  }
+  .menu {
+    display: none !important; /* HIDE MENU ON SMALL SCREEN */
+  }
+  .text-section {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .text-section h2 {
+    font-size: 1.4rem;
+  }
+  .text-section p {
+    font-size: 0.95rem;
+  }
+  .explore-comp-btn {
+    padding: 6px 20px;
+    font-size: 0.9rem;
+  }
+  .image-section img {
+    height: 250px;
+  }
+  .btn-slider {
+    font-size: 0.9rem;
+    min-width: 40px;
+  }
+  .slider-container{
+    display: flex !important;
+  }
+
+}
+
   </style>

@@ -65,57 +65,71 @@
   }
   
   .overlay {
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
-    backdrop-filter: blur(4px); /* Blur effect */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 50px;
+    justify-content: flex-start;
+    padding: 0 5%;
   }
   
   .content {
     color: white;
-    max-width: 500px;
+    max-width: 600px;
   }
   
   .content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responsive font size */
     margin-bottom: 1rem;
   }
   
   .content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
     margin-bottom: 1.5rem;
+    line-height: 1.5;
   }
   
   .content button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     background: linear-gradient(90deg, #ffc600 10%, #ff4200);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
   }
   
   .content button:hover {
-    .content button:hover {
-        background: linear-gradient(90deg, #ffc600 10%, #ff4200); /* Slightly darker shades */
-}
+    background: linear-gradient(90deg, #ffb400 10%, #e63e00);
   }
   
   @media (max-width: 768px) {
     .overlay {
-      padding-left: 20px;
+      justify-content: center; /* Center content on smaller screens */
+      padding: 0 10px;
+      text-align: center;
     }
+    .content {
+      max-width: 90%;
+    }
+    .content button {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
     .content h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
     .content p {
-      font-size: 1rem;
+      font-size: 0.95rem;
+    }
+    .content button {
+      padding: 0.6rem 1.2rem;
     }
   }
   </style>
-  

@@ -97,13 +97,42 @@ export default{
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .top {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .top-content {
     text-align: center;
+  }
+
+  .top-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .bottom-content h2 {
+    text-align: center;
+  }
+
+  .bottom-content p,
+  .bottom-content blockquote {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-container {
+    padding: 20px 10px;
+  }
+
+  .top-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .bottom-content h2 {
+    font-size: 1.4rem;
   }
 }
 </style>

@@ -96,94 +96,136 @@
   </script>
   
   <style scoped>
-  .service-card {
-    border: 1.5px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, border-color 0.3s;
-  }
-  
-  .heading-container {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  .heading-container h1 {
-    margin-bottom: 1.5rem;
-  }
-  .card-body{
-    padding: 0%;
-  }
-  .content-body{
-    padding: 10px;
-  }
-  .content-body h5{
-    text-align: left;
-  }
-  .content-body p{
-    text-align: left;
-  }
-  .card-image {
-    width: 100%;
-    height: 16rem;
+.service-card {
+  border: 1.5px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, border-color 0.3s;
+}
 
-    margin: 0 auto;
+.heading-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading-container h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.card-body {
+  padding: 0%;
+}
+
+.content-body {
+  padding: 10px;
+}
+
+.content-body h5 {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.content-body p {
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.card-image {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.card-btn {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  color: #ea580c;
+  font-weight: 500;
+  background-color: white;
+  border: none;
+}
+
+.card-btn span {
+  position: relative;
+}
+
+.btn-show-more {
+  color: white;
+  background: linear-gradient(90deg, #ffc600 10%, #ff4200);
+  border: none;
+  padding: 8px 30px;
+}
+
+/* ---------------------- */
+/* RESPONSIVE CHANGES */
+
+/* Single Card per Row < 992px */
+@media (max-width: 992px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
-  
-  /* .card-hover:hover {
-    transform: scale(1.06);
-    transition: transform 0.6s;
+}
+
+@media (max-width: 768px) {
+  .heading-container h1 {
+    font-size: 2rem;
   }
-   */
+
+  .content-body h5 {
+    font-size: 1rem;
+  }
+
+  .content-body p {
+    font-size: 0.9rem;
+  }
+
+  .card-image {
+    height: 12rem;
+  }
+
   .card-btn {
-    width: 10vw;
-    margin-left: 13rem;
-    margin-right: 0;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: end;
-    padding: 8px 16px;
-    padding-right: 0px;
-    color: #ea580c;
-    font-weight: 500;
-    background-color: white;
-    border: none;
-    overflow: hidden;
+    font-size: 0.9rem;
+    justify-content: center;
   }
-  
-  .card-btn span {
-    position: relative;
+}
+
+@media (max-width: 576px) {
+  .heading-container h1 {
+    font-size: 1.8rem;
   }
-  
-  /* .card-btn::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0%;
-    height: 2px;
-    background-color: #ea580c;
-    transform: translateX(-50%);
-    transition: all 0.6s ease;
+
+  .content-body h5 {
+    font-size: 0.95rem;
+    text-align: center;
   }
-  
-  .card-btn:hover::before {
+
+  .content-body p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .card-image {
+    height: 10rem;
+  }
+
+  .card-btn {
+    font-size: 0.85rem;
+    justify-content: center;
     width: 100%;
-    left: 0;
-    transform: translateX(0);
   }
-  
-  .card-btn:not(:hover)::before {
-    width: 0%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-   */
+
   .btn-show-more {
-    color: white;
-    background: linear-gradient(90deg, #ffc600 10%, #ff4200);
-    border: none;
-    padding: 8px 30px;
+    padding: 6px 20px;
+    font-size: 0.9rem;
   }
+}
+
   </style>
   

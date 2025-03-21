@@ -10,7 +10,7 @@
         <!-- Left: Image -->
         <div class="col-md-6 text-center">
           <img 
-            src="C:\Users\DELL\Desktop\Merketing_Web\public\Banner_image_3.png" 
+            src="C:\Users\DELL\Desktop\Merketing_Web\public\faq_image.png" 
             alt="FAQ Image" 
             class="img-fluid faq-image"
           />

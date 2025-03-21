@@ -26,9 +26,6 @@
     <div class="spacing">
       <ContactUs/>
     </div>
-    <div class="">
-      <Footer/>
-    </div>
 
  
   </main>
